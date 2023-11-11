@@ -4,20 +4,11 @@ using AuthorizationModule.Models;
 
 namespace AuthorizationModule.Middlewares;
 
-public static class AuthorizationMiddlewareExtensions
-{
-	public static IApplicationBuilder UseCustomAuthorization(
-		this IApplicationBuilder builder)
-	{
-		return builder.UseMiddleware<AuthorizationMiddleware>();
-	}
-}
-
-public class AuthorizationMiddleware {
+public class AuthorizationFeatureMiddleware {
 	private readonly RequestDelegate _next;
 	private const string PathPrefix = "/api/v1/";
 
-	public AuthorizationMiddleware(RequestDelegate next) {
+	public AuthorizationFeatureMiddleware(RequestDelegate next) {
 		_next = next;
 	}
 
@@ -34,6 +25,10 @@ public class AuthorizationMiddleware {
 		var db = new Database();
 		var path = (context.Request.Path.Value ?? "").Replace(PathPrefix, "")
 			.ToLower();
+		if (path.Contains("contents")) {
+			await _next(context);
+			return;
+		}
 		var hasPermission = db.Permissions
 			.FirstOrDefault(o => o.AccountId.Equals(accountId)
 			                     //&& o.Feature.Path.Equals(path)

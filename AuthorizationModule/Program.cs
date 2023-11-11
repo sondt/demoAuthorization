@@ -19,7 +19,8 @@ if (app.Environment.IsDevelopment()) {
 
 app.UseHttpsRedirection();
 
-app.UseCustomAuthorization();
+app.UseAuthorizationFeature();
+app.UseAuthorizationContent();
 
 app.MapControllers();
 

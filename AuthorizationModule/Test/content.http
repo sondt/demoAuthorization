@@ -1,0 +1,94 @@
+### Test account ADMIN, draft content
+POST https://localhost:7261/api/v1/Contents
+Content-Type: application/json
+AccountId:502e52e1-0ace-4023-a415-715d4e521fa7
+
+{
+  "contentId": "00000000-0000-0000-0000-000000000000",
+  "categoryId": "77c450ee-33e0-49c7-889f-ce69c79f6a2b",
+  "status": 1
+}
+
+### Test account ADMIN, publish content
+POST https://localhost:7261/api/v1/Contents
+Content-Type: application/json
+AccountId:502e52e1-0ace-4023-a415-715d4e521fa7
+
+{
+  "contentId": "00000000-0000-0000-0000-000000000000",
+  "categoryId": "77c450ee-33e0-49c7-889f-ce69c79f6a2b",
+  "status": 8
+}
+
+### Test account ADMIN, gui bai len cho bien tap
+POST https://localhost:7261/api/v1/Contents
+Content-Type: application/json
+AccountId:502e52e1-0ace-4023-a415-715d4e521fa7
+
+{
+  "contentId": "00000000-0000-0000-0000-000000000000",
+  "categoryId": "77c450ee-33e0-49c7-889f-ce69c79f6a2b",
+  "status": 2
+}
+
+### Test account ADMIN, gui bai len cho bien tap + chuyen mục chưa được phân quyền
+POST https://localhost:7261/api/v1/Contents
+Content-Type: application/json
+AccountId:502e52e1-0ace-4023-a415-715d4e521fa7
+
+{
+  "contentId": "00000000-0000-0000-0000-000000000000",
+  "categoryId": "77c450ee-33e0-49c7-889f-ce69c79f6a8b",
+  "status": 2
+}
+
+
+### Test account phongvien, draft content + chuyen mục thể thao được phân quyền
+POST https://localhost:7261/api/v1/Contents
+Content-Type: application/json
+AccountId:502e52e1-0ace-4023-a415-715d4e521fa8
+
+{
+  "contentId": "00000000-0000-0000-0000-000000000000",
+  "categoryId": "77c450ee-33e0-49c7-889f-ce69c79f6a2b",
+  "status": 1
+}
+
+### Test account phongvien, draft content + chuyen mục giải trí chưa được phân quyền
+POST https://localhost:7261/api/v1/Contents
+Content-Type: application/json
+AccountId:502e52e1-0ace-4023-a415-715d4e521fa8
+
+{
+  "contentId": "00000000-0000-0000-0000-000000000000",
+  "categoryId": "77c450ee-33e0-49c7-889f-ce69c79f6a2c",
+  "status": 1
+}
+
+### Test account phongvien, ReceiveForEditing content + chuyen muc thể thao
+POST https://localhost:7261/api/v1/Contents
+Content-Type: application/json
+AccountId:502e52e1-0ace-4023-a415-715d4e521fa8
+
+{
+  "contentId": "00000000-0000-0000-0000-000000000000",
+  "categoryId": "77c450ee-33e0-49c7-889f-ce69c79f6a2b",
+  "status": 11
+}
+
+
+
+###
+PATCH https://localhost:7261/api/v1/Contents
+Content-Type: application/json
+AccountId:502e52e1-0ace-4023-a415-715d4e521fa7
+
+{
+  "contentId": "b7611d0f-44bc-488e-b540-cec678c40d09",
+  "categoryId": "77c450ee-33e0-49c7-889f-ce69c79f6a2b",
+  "status": 1
+}
+
+
+
+

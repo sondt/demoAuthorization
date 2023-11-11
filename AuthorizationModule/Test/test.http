@@ -1,0 +1,31 @@
+### Test account ADMIN
+POST https://localhost:7261/api/v1/Categories
+AccountId:502e52e1-0ace-4023-a415-715d4e521fa7
+
+###
+PUT https://localhost:7261/api/v1/Categories/442d7f5f-3e00-4f5f-bdb8-71ef6516e6f8
+AccountId:502e52e1-0ace-4023-a415-715d4e521fa7
+
+###
+GET https://localhost:7261/api/v1/Categories
+AccountId:502e52e1-0ace-4023-a415-715d4e521fa7
+
+###
+DELETE https://localhost:7261/api/v1/Categories/2
+AccountId:502e52e1-0ace-4023-a415-715d4e521fa7
+
+
+### Test account USER
+POST https://localhost:7261/api/v1/Categories
+AccountId:502e52e1-0ace-4023-a415-715d4e521fa8
+
+###
+DELETE https://localhost:7261/api/v1/Categories/2
+AccountId:502e52e1-0ace-4023-a415-715d4e521fa8
+
+###
+GET https://localhost:7261/api/v1/Categories
+AccountId:502e52e1-0ace-4023-a415-715d4e521fa8
+
+
+

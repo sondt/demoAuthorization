@@ -8,12 +8,12 @@ namespace AuthorizationModule.Controllers;
 public class ContentsController: ControllerBase {
 	
 	[HttpPost]
-	public ActionResult Insert([FromBody] ContentValidate contentValidate) {
-		return Ok(contentValidate);
+	public ActionResult Insert([FromBody] Content content) {
+		return Ok(content);
 	}
 	
 	[HttpPatch("{id:guid}")]
-	public ActionResult Update([FromBody] ContentValidate contentValidate, Guid id) {
+	public ActionResult Update([FromBody] Content contentValidate, Guid id) {
 		return Ok("Updated");
 	}
 
